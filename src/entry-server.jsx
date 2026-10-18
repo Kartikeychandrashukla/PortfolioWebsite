@@ -1,0 +1,5 @@
+import { renderToString } from 'react-dom/server';
+import App from './App.jsx';
+
+export const render = () => renderToString(<App />);
+export * from './data/profile.js';
