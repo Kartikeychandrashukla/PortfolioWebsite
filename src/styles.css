@@ -129,7 +129,7 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 /* ── Hero ────────────────────────────────── */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: clip; padding: 120px 0 clamp(28px, 4vw, 48px); }
 .hero__orb { position: absolute; inset: 0; z-index: 0; }
-.hero__orb canvas { position: absolute; top: 0; right: -8vw; width: min(78vw, 1100px) !important; height: 100% !important; }
+.hero__orb canvas { position: absolute; top: 0; right: -9vw; width: min(64vw, 980px) !important; height: 100% !important; }
 .hero__glow {
   position: absolute; right: 8%; top: 18%; width: 46vw; height: 46vw; border-radius: 50%;
   background: radial-gradient(circle, rgba(76, 107, 255, 0.28), rgba(139, 92, 255, 0.12) 45%, transparent 70%);
@@ -336,7 +336,7 @@ a:hover > .arrow { transform: translate(3px, -3px); }
 
 /* ── Responsive ──────────────────────────── */
 @media (max-width: 1024px) {
-  .hero__orb canvas { right: -20vw; width: 110vw !important; }
+  .hero__orb canvas { right: -10vw; width: 90vw !important; }
   .cards { grid-template-columns: 1fr; }
   .skills, .creds { grid-template-columns: repeat(2, 1fr); }
   .archive__list a { grid-template-columns: 1fr 24px; gap: 6px 16px; }
@@ -348,7 +348,7 @@ a:hover > .arrow { transform: translate(3px, -3px); }
   .nav__links { background: rgba(12, 12, 18, 0.82); }
   .nav__links a { padding: 8px 12px; font-size: 13px; }
   .hero { padding-top: 96px; }
-  .hero__orb canvas { top: 0; right: -25vw; width: 120vw !important; height: 62% !important; }
+  .hero__orb canvas { top: 56px; right: 0; width: 100vw !important; height: 58% !important; }
   .hero__meta { grid-template-columns: 1fr 1fr; }
   .hero__scroll { display: none; }
   .about { grid-template-columns: 1fr; }

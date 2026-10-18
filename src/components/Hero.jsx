@@ -15,9 +15,9 @@ export default function Hero() {
     let cancelled = false;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     // three.js is split into its own chunk and loaded after first paint.
-    import('../three/ParticleOrb.js').then(({ ParticleOrb }) => {
+    import('../three/SignalPortrait.js').then(({ SignalPortrait }) => {
       if (cancelled || !canvasRef.current) return;
-      try { orb = new ParticleOrb(canvasRef.current, { reducedMotion }); } catch { /* no WebGL — static fallback stays */ }
+      try { orb = new SignalPortrait(canvasRef.current, { reducedMotion }); } catch { /* no WebGL — glow backdrop stays */ }
     });
     const onProgress = (e) => orb?.setScroll(e.detail);
     window.addEventListener('hero-progress', onProgress);

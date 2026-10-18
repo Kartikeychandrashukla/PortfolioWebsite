@@ -1,6 +1,7 @@
 // Converts the raw artwork in /assets-src into web-ready WebP + the OG/social image.
 import sharp from 'sharp';
 import { mkdir } from 'node:fs/promises';
+import { buildPortraitSignal } from './portrait-signal.mjs';
 
 const SRC = 'assets-src';
 const OUT = 'public/images';
@@ -38,4 +39,6 @@ await sharp({ create: { width: 1200, height: 630, channels: 3, background: '#000
   .toFile('public/og-image.jpg');
 
 await sharp(`${SRC}/portrait.jpg`).resize(180, 180).png().toFile('public/apple-touch-icon.png');
+// Cut-out brightness map the hero particle portrait is sampled from
+await buildPortraitSignal(`${SRC}/portrait.jpg`, `${OUT}/portrait-signal.png`);
 console.log('images done');
